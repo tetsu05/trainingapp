@@ -1,1 +1,7 @@
 <h1>詳細画面</h1>
+<%= @training.title %>
+<%= @training.body %>
+<div>
+  <%= link_to 'edit', edit_training_path(@training.id) %>|
+  <%= link_to 'back', trainings_path %>
+</div>

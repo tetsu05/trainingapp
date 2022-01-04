@@ -17,6 +17,13 @@ class TrainingsController < ApplicationController
   end
   
   def edit
+    @training = Training.find(params[:id])
+  end
+  
+  def update
+    training = Training.find(params[:id])
+    training.update(training_params)
+    redirect_to training_path(training)
   end
   
   def destroy
