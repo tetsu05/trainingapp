@@ -1,12 +1,16 @@
 class TrainingsController < ApplicationController
   
   def index
-    @training = Training.new
     @trainings = Training.all
   end
   
   def show
     @training = Training.find(params[:id])
+    @likes_count = Like.where(training_id: @training.id).count
+  end
+  
+  def new
+    @training = Training.new
   end
   
   

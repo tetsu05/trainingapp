@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_31_061645) do
+ActiveRecord::Schema.define(version: 2022_01_05_065510) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "training_id"
+    t.string "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_likes_on_training_id"
+  end
 
   create_table "trainings", force: :cascade do |t|
     t.string "title"

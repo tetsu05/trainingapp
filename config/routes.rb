@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
-  resources :trainings
+  resources :trainings do
+    resources :likes, only: [:create]
+  end
 end

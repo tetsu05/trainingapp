@@ -1,6 +1,9 @@
+<%= flash[:notice] %>
 <h1>詳細画面</h1>
+
 <%= @training.title %>
-<%= @training.body %>
+<%= safe_join(@training.body.split("\n"),tag(:br)) %>
+<%= button_to 'いいね', training_likes_path(@training) %><%= @likes_count %>
 <div>
   <%= link_to 'edit', edit_training_path(@training.id) %>|
   <%= link_to 'back', trainings_path %>
